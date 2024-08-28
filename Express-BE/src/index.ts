@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ROUTE
-app.use("/orders", ordersRoute);
+app.use("/api/orders", ordersRoute);
 
 //* ERROR HANDLING FOR UNDEFINED ROUTES
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
