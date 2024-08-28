@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: cybership
+      POSTGRES_PASSWORD: cybership_password
+      POSTGRES_DB: orderstatus
+    ports:
+      - "5434:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
