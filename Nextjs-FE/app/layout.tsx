@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
 	title: "Cybership",
@@ -16,7 +18,17 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={`${poppins.className} bg-slate-200  text-slate-700`}>
+				<Toaster
+					toastOptions={{
+						style: {
+							background: "rgb(51 65 85)",
+							color: "#fff",
+						},
+					}}
+				/>
+				{children}
+			</body>
 		</html>
 	);
 }
