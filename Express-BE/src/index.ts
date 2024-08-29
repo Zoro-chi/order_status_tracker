@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 
-const express = require("express");
+import express from "express";
 
-const ordersRoute = require("./routes/orderRoute");
+import router from "../src/routes/orderRoute";
 
 const app = express();
 const PORT = process.env.PORT || 2121;
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ROUTE
-app.use("/api/orders", ordersRoute);
+app.use("/api/orders", router);
 
 //* ERROR HANDLING FOR UNDEFINED ROUTES
 app.all("*", (req: Request, res: Response, next: NextFunction) => {

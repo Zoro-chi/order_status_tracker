@@ -12,4 +12,4 @@ router.get("/", getOrders);
 router.post("/", createOrder);
 router.patch("/:id/status", changeOrderStatus);
 
-module.exports = router;
+export default router;
