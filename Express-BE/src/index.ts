@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 
 const express = require("express");
 
-const ordersRoute = require("../src/routes/orderRoute");
+const ordersRoute = require("./routes/orderRoute");
 
 const app = express();
 const PORT = process.env.PORT || 2121;
