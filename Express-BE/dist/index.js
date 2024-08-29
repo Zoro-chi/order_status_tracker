@@ -1,13 +1,17 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-const ordersRoute = require("./routes/orderRoute");
-const app = express();
+const express_1 = __importDefault(require("express"));
+// import router from "../src/routes/orderRoute";
+const orderRoute_1 = __importDefault(require("./routes/orderRoute"));
+const app = (0, express_1.default)();
 const PORT = process.env.PORT || 2121;
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: true }));
 // ROUTE
-app.use("/api/orders", ordersRoute);
+app.use("/api/orders", orderRoute_1.default);
 //* ERROR HANDLING FOR UNDEFINED ROUTES
 app.all("*", (req, res, next) => {
     const error = new Error(`Can't find ${req.originalUrl} on this server!`);

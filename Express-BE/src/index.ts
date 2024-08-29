@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 
 import express from "express";
 
-import router from "../src/routes/orderRoute";
+import router from "./routes/orderRoute";
 
 const app = express();
 const PORT = process.env.PORT || 2121;
