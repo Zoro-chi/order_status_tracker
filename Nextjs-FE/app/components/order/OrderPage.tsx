@@ -16,7 +16,9 @@ const OrdersPage: React.FC = () => {
 		try {
 			const response = await fetch("/api/orders");
 			if (!response.ok) {
-				throw new Error("Failed to fetch orders");
+				throw new Error(
+					"Failed to fetch orders: Please wait 50secs and try again as this is a free tier Lambda function with cold start. Thank you!"
+				);
 			}
 			const data = await response.json();
 			if (Array.isArray(data.data)) {
